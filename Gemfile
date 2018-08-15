@@ -5,7 +5,8 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-
+#for debugging
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 #for testing
 gem 'rails-controller-testing'
 # Use postgresql as the database for Active Record
