@@ -13,6 +13,10 @@ gem 'rails-controller-testing'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+#jquery file
+gem 'jquery', '~> 0.0.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-ujs', '~> 0.1.0'
 #bootstrap file
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #for testing
