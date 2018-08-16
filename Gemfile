@@ -7,8 +7,13 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 #for debugging
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+#for create fake data
+gem 'faker','1.7.3'
 #for testing
 gem 'rails-controller-testing'
+#for pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
