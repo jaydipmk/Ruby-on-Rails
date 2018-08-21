@@ -10,10 +10,10 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'crud'
-set :domain, 'jd.com'
-set :deploy_to, '/var/www/jd.com'
-set :repository, 'git://...'
-set :branch, 'master'
+set :domain, 'localhost'
+set :deploy_to, '/home/jaydip/Desktop/Rails/crud'
+set :repository, 'git@github.com:jaydipmk/Ruby-on-Rails.git'
+set :branch, 'crud'
 
 # Optional settings:
 #   set :user, 'foobar'          # Username in the server to SSH to.
