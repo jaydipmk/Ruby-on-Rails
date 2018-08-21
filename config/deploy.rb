@@ -1,7 +1,8 @@
+require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
-# require 'mina/rvm'    # for rvm support. (https://rvm.io)
+require 'mina/rvm'    # for rvm support. (https://rvm.io)
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -11,6 +12,7 @@ require 'mina/git'
 
 set :application_name, 'crud'
 set :domain, 'localhost'
+set :user, 'jaydip' 
 set :deploy_to, '/home/jaydip/Desktop/Rails/crud'
 set :repository, 'git@github.com:jaydipmk/Ruby-on-Rails.git'
 set :branch, 'crud'
@@ -28,14 +30,15 @@ set :branch, 'crud'
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
-task :remote_environment do
+task :environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
+  invoke :'rvm:use'#, 'ruby-1.9.3-p125@default'
 end
+
 
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
