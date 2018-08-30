@@ -1,6 +1,5 @@
 class DesignationController < ApplicationController
 	def index
-		#@department = Department.find_by_Name(d.name)
 		@designation = Designation.all
 	end
 
