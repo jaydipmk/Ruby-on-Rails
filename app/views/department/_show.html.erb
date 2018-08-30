@@ -1,0 +1,25 @@
+<div class="container">
+	<table class="table table-bordered" >
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Remark</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+	  <tbody>
+		<% no = 0	 %>
+			<% @department.each do |d| %>
+			<tr>
+				<td><%= no+= 1 %></td>
+				<td><%= d.id %></td>
+				<td><%= link_to d.Name , designation_index_path %></td>
+				<td><%= d.Remark%></td>
+				<td><%= d.status%></td>
+			<% end %>
+			</tr>
+		</tbody>
+	</table>
+</div>

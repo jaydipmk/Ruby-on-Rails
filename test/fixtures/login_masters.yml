@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: login_masters
+#
+#  id         :bigint(8)        not null, primary key
+#  username   :string
+#  password   :string
+#  role       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password: MyString
+  role: MyString
+  active: 1
+
+two:
+  username: MyString
+  password: MyString
+  role: MyString
+  active: 1

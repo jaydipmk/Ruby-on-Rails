@@ -1,0 +1,2 @@
+module LoginMasterHelper
+end

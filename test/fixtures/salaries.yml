@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: salaries
+#
+#  id             :bigint(8)        not null, primary key
+#  Date_Of_Salary :date
+#  Amount         :decimal(, )
+#  emp_master_id  :bigint(8)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Date_Of_Salary: 2018-08-27
+  Amount: 9.99
+  emp_master: one
+
+two:
+  Date_Of_Salary: 2018-08-27
+  Amount: 9.99
+  emp_master: two

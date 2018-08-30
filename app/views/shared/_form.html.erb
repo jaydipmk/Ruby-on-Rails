@@ -1,0 +1,14 @@
+<% provide(:yield, "Log in") %>
+
+<%= f.label :username %>
+<%= f.text_field :username, class: 'form-control' %>
+<br>
+<%= f.label :password %>
+<%= f.password_field :password, class: 'form-control' %>
+<br>
+<%= f.label :Role %>
+<%= f.select :role, ['Admin', 'Employee']%>
+<br>
+<%= f.submit "Log in", class: "btn btn-primary" %>
+<br>
+  

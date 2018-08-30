@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: leaves
+#
+#  id              :bigint(8)        not null, primary key
+#  Start_Date      :date
+#  End_Date        :date
+#  Reason          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  login_master_id :bigint(8)
+#  emp_master_id   :bigint(8)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Start_Date: 2018-08-27
+  End_Date: 2018-08-27
+  Reason: MyString
+
+two:
+  Start_Date: 2018-08-27
+  End_Date: 2018-08-27
+  Reason: MyString

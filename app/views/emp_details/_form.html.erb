@@ -1,0 +1,30 @@
+ <%= form_for(@emp,url: emp_details_path ) do |f| %>
+      <%= f.label :FirstName %>
+      <%= f.text_field :FirstName, class: 'form-control' %>
+      <br>
+      <%= f.label :LastName %>
+      <%= f.text_field :LastName, class: 'form-control' %>
+      <br>
+      <%= f.label :Username %>
+      <%= f.text_field :Username, class: 'form-control' %>
+      <br>
+      <%= f.label :Email %>
+      <%= f.email_field :Email, class: 'form-control' %>
+      <br>
+      <%= f.label :Mobile_No %>
+      <%= f.number_field :Mobile_No, class: 'form-control' %>
+      <br>
+      <%= f.label :Nationality %>
+      <%= f.text_field :Nationality, class: 'form-control' %>
+      <br>
+      <%= f.label :Marital_Status %>
+      <%= f.text_field :Marital_Status, class: 'form-control' %>
+      <br>
+      <%#= f.label :login_master_id %>
+      <%= f.number_field :login_master_id,:value=>LoginMaster.last.id, 
+                                                  class: 'form-control' %>
+      <br>
+      <%= f.submit "Continue", class: "btn btn-primary" %>
+      <br>
+<% end %>
+   

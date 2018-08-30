@@ -1,0 +1,28 @@
+<h2>Leave Details</h2>
+
+<%= link_to "Apply For Leave", new_leave_path %>
+<br>
+<br>
+<div class="container">
+	<table class="table table-bordered" >
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Start Date</th>
+				<th>End Date</th>
+				<th>Reason</th>
+			</tr>
+		</thead>
+    <tbody>
+		<% no = 0	 %>
+			<% @leave.each do |l| %>
+			<tr>
+				<td><%= no+= 1 %></td>
+				<td><%= l.Start_Date%></td>
+				<td><%= l.End_Date%></td>
+				<td><%= l.Reason%></td>
+			<% end %>
+		</tr>
+	</tbody>
+	</table>
+</div>

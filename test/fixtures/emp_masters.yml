@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: emp_masters
+#
+#  id              :bigint(8)        not null, primary key
+#  FirstName       :string
+#  LastName        :string
+#  Username        :string
+#  Email           :string
+#  Mobile_No       :decimal(, )
+#  Nationality     :string
+#  Marital_Status  :string
+#  login_master_id :bigint(8)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  FirstName: MyString
+  LastName: MyString
+  Username: MyString
+  Email: MyString
+  Mobile_No: 9.99
+  Nationality: MyString
+  Marital_Status: MyString
+  login_master: one
+
+two:
+  FirstName: MyString
+  LastName: MyString
+  Username: MyString
+  Email: MyString
+  Mobile_No: 9.99
+  Nationality: MyString
+  Marital_Status: MyString
+  login_master: two

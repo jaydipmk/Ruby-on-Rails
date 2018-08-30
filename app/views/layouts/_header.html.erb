@@ -1,0 +1,24 @@
+<header class="navbar navbar-default navbar-inverse">
+  <div class="container">
+    <%= link_to "EMS", '/login', id: "logo" %>
+      <nav>
+      <% if logged_in? %>
+      <ul class="nav navbar-nav navbar-left ">
+        <li><%= link_to "Department", department_index_path %></li>
+        <li><%= link_to "Employee",  emp_details_path %></li>
+        <li><%= link_to "Leave", leave_index_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right ">
+        <li ><%= link_to "log out", logout_path, method: :delete %></li>
+      </ul>
+      <% else %>
+      <ul class="nav navbar-nav navbar-right ">
+        <li ><%= link_to "Log in", '/login' %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right ">
+        <li ><%= link_to "Sign Up", new_login_master_path %></li>
+      </ul>
+      <% end %>
+    </nav>
+  </div>
+</header>
