@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3" >
+  <div class="col-md-6 col-md-offset-3" ,id ="emp_address">
     <% emp1 = EmpMaster.last %>
 
-    <%= form_for(@emp, url: emp_address_index_path ) do |f| %>
+    <%= form_for(@emp, url: emp_address_index_path) do |f| %>
       <%= f.label :Address %>
       <%= f.text_area :Address, size:'50*10', class: 'form-control' %>
       <br>
@@ -15,7 +15,7 @@
       <%= f.label :Nation %>
       <%= f.text_field :Nation, class: 'form-control' %>
       <br>
-      <%= f.number_field :emp_master_id, value: emp1.id ,class: 'form-control'%>
+      <%= f.hidden_field :emp_master_id, value: emp1.id ,class: 'form-control'%>
       <br>
       <%= f.submit "Sign Up", class: "btn btn-primary" %>
       <br>

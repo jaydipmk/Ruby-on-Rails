@@ -1,4 +1,5 @@
-<h2>All Posts </h2>
+<h2>Post Details</h2>
+<%= link_to "Add new Designation", new_designation_path(id: @department.id)%>
 <div class="container">
 	<table class="table table-bordered" >
 		<thead>
@@ -14,15 +15,12 @@
 			<tr>
 				<td><%= no+= 1 %></td>
 				<td><%= d.post %></td>
-				<td><%= link_to "Show", designation_path(d.id)%></td>
 				<td><%= link_to "Edit",  edit_designation_path(d.id) %></td>
 				<td><%= link_to "Delete", designation_path(d.id), method: :delete %>
 				</td>
-			<% end %>
+			<% end %>	
 			</tr>
 		</tbody>
 	</table>
 </div>
-
-
 

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" >
+    <%= form_for(@leave,url: leave_path(params[:id]) ) do |f| %>
+      <%= f.label :StartDate %>
+      <%= f.date_field :Start_Date, class: 'form-control' %>
+      <br>
+      <%= f.label :EndDate %>
+      <%= f.date_field :End_Date, class: 'form-control' %>
+      <br>
+      <%= f.label :Reason %>
+      <%= f.text_area :Reason, size:'50*10', class: 'form-control' %>
+      <br>
+      <%= f.hidden_field :login_master_id, value: @emp.id %>
+      <br>
+      <%= f.submit "Apply", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

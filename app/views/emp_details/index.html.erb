@@ -1,30 +1,11 @@
 <h3>Employee Details</h3> 
-<% if logged_in?%>	<%#= link_to "Add new employee", new_emp_detail_path %>
-<br>
-
-<div class="container">
-	<table class="table table-bordered" >
-	<tr>
-		<thead>
-			<th>User Name</th>
-			<th>Email</th>
-			<th>Mobile No</th>
-			<th>Role</th>
-		</thead>
-	</tr>
-		<% @emp.each do |e| %>
-		<tbody>
-			<tr>
-				<td><%= e.Username %></td>
-				<td><%= e.Email%></td>
-				<td><%= e.Mobile_No%></td>
-				<% emp1 = LoginMaster.find(e.login_master_id) %>
-				<td><%= emp1.role%></td>
-			<% end %>
-		</tr>
-	</tbody>
-</table>
-</div>
+<% if logged_in?%>
+	<% if @emp1.role == "Admin" %>
+		<%= link_to "Add new employee", new_emp_detail_path %>
+		<%= render 'details' %>
+	<% else %>
+		<%= render 'details' %>
+	<% end %>
 <% end %>
 
-<%= link_to "log out", logout_path, method: :delete %>
+

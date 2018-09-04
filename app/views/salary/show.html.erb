@@ -1,0 +1,13 @@
+<h2>Salary Details</h2>
+<td><%=link_to "Add Salary Details" , new_salary_path(id: params[:id]) %></td>	
+<% if @salary.exists? %> |
+	<td><%=link_to "Edit Salary Details",edit_salary_path(@salary.ids)%></td>	 |
+	<td><%=link_to "Delete Salary Details",salary_path(@salary.ids),method: :delete%></td>	
+<% end %>
+<% @salary.each do |s| %>
+	<h3>Date : </h3><%= s.Date_Of_Salary %>
+	<br>
+	<h3>Amount : </h3><%= s.Amount %>
+	<br>
+	<br>
+<% end %>

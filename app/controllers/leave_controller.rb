@@ -19,8 +19,19 @@ class LeaveController < ApplicationController
 		end
 	end
 
+	def edit
+		@emp = LoginMaster.find(session[:user_id])
+		@leave = Leave.find(params[:id])
+	end
+
+	def update
+		@leave = Leave.find(params[:id])
+		@leave.update_attributes!(leave_params)
+		redirect_to leave_index_path
+	end
+
 	def destroy
-		
+		@leave = Leave.find(params[:id])
 	end
 
 	private 

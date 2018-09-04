@@ -12,7 +12,7 @@ class EmpAddressController < ApplicationController
 		#binding.pry
     @emp = EmpAddress.new(emp_params)
     if @emp.save
-    	render 'index'
+    	redirect_to login_path
     else
       redirect_to new_emp_address_path
     end

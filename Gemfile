@@ -17,7 +17,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 #omniatuh for google
 gem 'omniauth-google-oauth2', '~> 0.5.3'
-
+#jquery gem 
+gem 'jquery', '~> 0.0.1'
 #pry gem
 gem 'pry'
 #jquery

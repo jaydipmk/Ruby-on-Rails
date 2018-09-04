@@ -1,4 +1,5 @@
- <%= form_for(@emp,url: emp_details_path) do |f| %>
+<%#= render 'form' %>
+ <%= form_for(@emp,url: emp_detail_path) do |f| %>
       <%= f.label :FirstName %>
       <%= f.text_field :FirstName, class: 'form-control' %>
       <br>
@@ -27,4 +28,3 @@
       <%= f.submit "Continue", class: "btn btn-primary" %>
       <br>
 <% end %>
-   

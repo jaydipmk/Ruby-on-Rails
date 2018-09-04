@@ -11,4 +11,5 @@
 #
 
 class Department < ApplicationRecord
+	has_many :designation
 end

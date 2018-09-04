@@ -1,0 +1,32 @@
+<div class="container" id="emp_datails">
+	<table class="table table-bordered" >
+	<tr>
+		<thead>
+			<th>User Name</th>
+			<th>Email</th>
+			<th>Mobile No</th>
+			<th>Role</th>
+			<th colspan="3"><center>Actions</center></th>
+		</thead>
+	</tr>
+		<% @emp.each do |e| %>
+		<tbody>
+			<tr>
+				<td><%= e.Username %></td>
+				<td><%= e.Email%></td>
+				<td><%= e.Mobile_No%></td>
+				<% emp1 = LoginMaster.find(e.login_master_id) %>
+				<td><%= emp1.role%></td>
+				<td><%= link_to "Show", emp_detail_path(e.id)%></td>
+				<% if @emp1.role == "Admin" %>
+					<td><%= link_to "Edit",  edit_emp_detail_path(e.id) %></td>
+					<td><%= link_to "Delete", emp_detail_path(e.id), method: :delete %></td>
+				<% end %>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<%#= link_to "log out", logout_path, method: :delete %>

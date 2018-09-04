@@ -35,7 +35,7 @@
 
 Rails.application.routes.draw do
   #resources :sessions
-  get    '/login',   to: 'sessions#new'
+  get   '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#LoginCreate'
   delete '/logout',  to: 'sessions#destroy'
   get  '/help',    to: 'static_pages#help'
@@ -53,8 +53,10 @@ Rails.application.routes.draw do
   resources :login_master
   resources :emp_address
   resources :leave
-  resources :department
+  resources :department 
   resources :designation
+  
+  resources :salary
 
 
   #resources :sessions, only: [:create, :destroy]

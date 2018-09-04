@@ -13,5 +13,5 @@
 #
 
 class EmpAddress < ApplicationRecord
-  belongs_to :emp_master 
+  belongs_to :emp_master, dependent: :destroy 
 end

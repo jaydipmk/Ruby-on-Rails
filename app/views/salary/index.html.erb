@@ -1,0 +1,27 @@
+<h2>index page of salary</h2>
+
+<%= link_to "Add salary Details",new_salary_path %>
+<div class="container">
+	<table class="table table-bordered" >
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Employee UserName</th>
+				<th>Employee Email</th>
+				<th colspan="2"><center>Actions</center></th>
+			</tr>
+		</thead>
+    <tbody>
+		<% no = 0	 %>
+		
+		<% @emp.each do |e| %>
+		 		<tr>
+					<td><%= no+= 1 %></td>
+					<td><%= e.Username%></td>
+					<td><%= e.Email	%></td>
+					<td><%= link_to "Show", salary_path(id: e.id) %></td>
+				</tr>
+		<% end %>	
+	</tbody>
+	</table>
+</div>

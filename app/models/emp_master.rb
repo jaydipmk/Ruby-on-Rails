@@ -16,5 +16,5 @@
 #
 
 class EmpMaster < ApplicationRecord
-	  belongs_to :login_master
+	  belongs_to :login_master, dependent: :destroy
 end

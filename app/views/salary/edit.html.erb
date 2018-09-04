@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" >
+    <% @emp_master = Salary.find(params[:id]) %>
+    <%= form_for(@salary,url: salary_path(params[:id])) do |f| %>
+      <%= f.label :Date_Of_Salary %>
+      <%= f.date_field :Date_Of_Salary, class: 'form-control' %>
+      <br>
+      <%= f.label :Amount %>
+      <%= f.number_field :Amount, class: 'form-control' %>
+      <br>
+      <%= f.hidden_field :emp_master_id, value: @emp_master.emp_master_id %>
+      <br>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
