@@ -17,7 +17,11 @@
 #
 
 class EmpMaster < ApplicationRecord
+<<<<<<< HEAD
 
+=======
+	 
+>>>>>>> 3075f049c2a1fbfb9bab9f440c2e0aee7374d36f
 		validates :FirstName,:LastName,:Nationality,presence: true, length: {maximum: 50}
 
 		VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
