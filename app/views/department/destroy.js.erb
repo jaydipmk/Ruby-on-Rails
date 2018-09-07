@@ -1,0 +1,12 @@
+// var deleted_row = "#department-<%= @department.id %>";
+// $(deleted_row).remove();
+// $("#department_details").load("#department_details");
+// $("#edit_department_<%= @department.id %>").remove();
+// $("#department_details").fadeOut();
+
+// $("#edit_department_<%= @department.id %>").fadeOut(function() {
+//   return $(this).remove().draw();
+// });
+$('.delete_dept').bind('ajax:success', function() {
+   $(this).closest('tr').fadeOut();
+});

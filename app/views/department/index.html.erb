@@ -1,9 +1,4 @@
-<h2>Welcome</h2>
+<%= render 'index' %>
 
-<% if @emp.role == "Admin" %>
-	<%= link_to "Add New Department", new_department_path ,id: "new_link" %>
-	<%= render 'details' %>
-<% else %>
-	<%= render 'details' %>
-<% end %>
+<div id="department-modal" class="modal fade"></div>
 

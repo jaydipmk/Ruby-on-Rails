@@ -1,7 +1,6 @@
-<h2>index page of salary</h2>
-
-<%= link_to "Add salary Details",new_salary_path %>
-<div class="container">
+<h2 class="header">index page of salary</h2>
+<%# if check_admin %>
+<div class="container" id="salary_index">
 	<table class="table table-bordered" >
 		<thead>
 			<tr>
@@ -11,17 +10,9 @@
 				<th colspan="2"><center>Actions</center></th>
 			</tr>
 		</thead>
-    <tbody>
-		<% no = 0	 %>
-		
-		<% @emp.each do |e| %>
-		 		<tr>
-					<td><%= no+= 1 %></td>
-					<td><%= e.Username%></td>
-					<td><%= e.Email	%></td>
-					<td><%= link_to "Show", salary_path(id: e.id) %></td>
-				</tr>
-		<% end %>	
+    <tbody class="salary_details">
+			<%= render 'index' %>	
 	</tbody>
 	</table>
 </div>
+<%# end %>

@@ -1,0 +1,28 @@
+<h2><%= @emp.FirstName%> <%= @emp.LastName%></h2> 
+<div class="container" id="emp_datails">
+	First Name : <%= @emp.FirstName %> <br>
+	Last Name : <%= @emp.LastName%> <br>
+	User Name : <%= @emp.Username%> <br>
+	Email : <%= @emp.Email%> <br>
+	Mobile No : <%= @emp.Mobile_No%> <br>
+	Nationality: <%= @emp.Nationality %> <br>
+	Marital Status: <%= @emp.Marital_Status %> <br>
+	<% if !@emp.emp_address.nil? %>
+		Address : <%= @emp.emp_address.Address %> <br>
+		Distict : <%= @emp.emp_address.Distict %> <br>
+		State : <%= @emp.emp_address.State %> <br>
+		Nation : <%= @emp.emp_address.Nation %> <br>
+	<% end %>
+	<% if check_admin %>
+		<% if !empty %>
+			Salary : <%= @emp.salary.Amount %>
+		<% else %>
+			Salary : Nil
+		<% end %>
+	<% end %>
+	<br>
+	<br>
+	<%= link_to "Back", " " %> 
+</div>
+
+

@@ -1,5 +1,6 @@
-<h2>All Posts </h2>
-<div class="container">
+<h2 class="header1">All Posts </h2>
+<%= link_to "Add new Designation", new_designation_path,remote: true, :class=>"new_link"%>
+<div class="container" id="designation_index">
 	<table class="table table-bordered" >
 		<thead>
 			<tr>
@@ -9,20 +10,7 @@
 			</tr>
 		</thead>
 	  <tbody>
-		<% no = 0	%>
-		<% @designation.each do |d| %>
-			<tr>
-				<td><%= no+= 1 %></td>
-				<td><%= d.post %></td>
-				<td><%= link_to "Show", designation_path(d.id)%></td>
-				<td><%= link_to "Edit",  edit_designation_path(d.id) %></td>
-				<td><%= link_to "Delete", designation_path(d.id), method: :delete %>
-				</td>
-			<% end %>
-			</tr>
+			<%= render 'index' %>
 		</tbody>
 	</table>
 </div>
-
-
-

@@ -1,17 +1,1 @@
-<h2>Add Department</h2>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3" >
-    <%= form_for(@department,url: department_index_path,remote: true ) do |f| %>
-      <%= f.label :Name %>
-      <%= f.text_field :Name, class: 'form-control' %>
-      <br>
-      <%= f.label :Remark %>
-      <%= f.text_area :Remark, size:'50*10', class: 'form-control' %>
-      <br>
-      <%= f.label :Status %>
-      <%= f.select :status,["Active","Inactive"] %>
-      <br>
-      <%= f.submit "Apply", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'new' %>

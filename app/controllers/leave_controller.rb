@@ -1,4 +1,5 @@
 class LeaveController < ApplicationController
+	include LoginMasterHelper
 
 	def index
 		@leave = Leave.all
@@ -9,13 +10,22 @@ class LeaveController < ApplicationController
 		@leave = Leave.new
 	end
 
+	def show
+		@leave = Leave.find(params[:id])
+	end
+
 	def create
 		@leave = Leave.new(leave_params)
-		
 		if @leave.save
-			redirect_to leave_index_path
+			redirect_to leave_index_path		
 		else
-			redirect_to new_leave_path 
+			respond_to do |f|
+				#f.html{redirect_to new_leave_path}
+				f.js
+				@leave.errors.any?
+				@leave.errors.each do |key, value|
+				end
+			end
 		end
 	end
 
@@ -32,10 +42,13 @@ class LeaveController < ApplicationController
 
 	def destroy
 		@leave = Leave.find(params[:id])
+		@leave.status = 2
+		@leave.save
+		redirect_to leave_index_path
 	end
 
 	private 
 		def leave_params
-			params.require(:leave).permit(:Start_Date,:End_Date,:Reason)
+			params.require(:leave).permit(:Start_Date,:End_Date,:Reason,:login_master_id)
 		end
 end

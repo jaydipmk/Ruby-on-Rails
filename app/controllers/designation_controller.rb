@@ -1,5 +1,5 @@
 class DesignationController < ApplicationController
-
+	include LoginMasterHelper
 	def index
 		@designation = Designation.all
 	end
@@ -19,10 +19,14 @@ class DesignationController < ApplicationController
 	end
 
 	def show
-		@department = Department.find(params[:id])
-		#binding.pry
-		#if Designation.exists?(department_id: params[:id])
-		@designation = Designation.where(department_id: @department.id)
+
+		@designation = Designation.find(params[:id])
+		binding.pry
+
+		# @department = Department.find(params[:id])
+		# #binding.pry
+		# #if Designation.exists?(department_id: params[:id])
+		# @designation = Designation.where(department_id: @department.id)
 		#else
 		#	redirect_to new_designation_path
 		#@designation = Designation.find(@designation1.ids)
@@ -32,18 +36,18 @@ class DesignationController < ApplicationController
 
 	def edit
 		@designation = Designation.find(params[:id])
-		binding.pry
+		
 	end
 
 	def update
 		@designation = Designation.find(params[:id])
-		binding.pry
-		@designation.update_attributes!(edit_des_params)
+		@designation.update_attributes!(designation_params)
 		redirect_to designation_index_path
 	end
 
 	def destroy
 		@designation = Designation.find(params[:id])	
+		
 		@designation.destroy
 		redirect_to designation_index_path
 	end
@@ -51,9 +55,5 @@ class DesignationController < ApplicationController
 	private
 		def designation_params
 			params.require(:designation).permit(:post,:department_id)
-		end
-
-		def edit_des_params
-			params.require(:designation).permit(:post)
 		end
 end

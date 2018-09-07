@@ -10,6 +10,7 @@
 #  updated_at      :datetime         not null
 #  login_master_id :bigint(8)
 #  emp_master_id   :bigint(8)
+#  status          :integer          default(0)
 #
 
 require 'test_helper'

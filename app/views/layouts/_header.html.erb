@@ -1,13 +1,21 @@
 <header class="navbar navbar-default navbar-inverse">
   <div class="container">
+  <% if logged_in? %>
+    <%= link_to "EMS",login_master_index_path, id: "logo" %>
+  <% else %>  
     <%= link_to "EMS", '/login', id: "logo" %>
+  <% end %>
+
       <nav>
       <% if logged_in? %>
       <ul class="nav navbar-nav navbar-left ">
         <li><%= link_to "Department", department_index_path %></li>
+        <li><%= link_to "Designation", designation_index_path %></li>
         <li><%= link_to "Employee",  emp_details_path %></li>
         <li><%= link_to "Leave", leave_index_path %></li>
+        <% if check_admin %>
         <li><%= link_to "Salary Details", salary_index_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right ">
         <li ><%= link_to "log out", logout_path, method: :delete %></li>

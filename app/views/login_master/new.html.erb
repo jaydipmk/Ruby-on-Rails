@@ -9,8 +9,11 @@
 			<%= f.label :password %>
 			<%= f.password_field :password, class: 'form-control' %>
 			<br>
+			<%= f.label :password_confirmation,"Confirm password" %>
+			<%= f.password_field :password_confirmation, class: 'form-control' %>
+			<br>
 			<%= f.label :Role %>
-			<%= f.select :role, ['Admin', 'Employee']%>
+			<%= f.select :role, ['Employee','Admin','HR']%>
 			<br>
 			<%= f.submit "Sign up and Continue" , class: "btn btn-primary" %> or
 			<%= link_to "Sign in with google", "/auth/google_oauth2" %>

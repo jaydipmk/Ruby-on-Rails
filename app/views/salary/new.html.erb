@@ -1,15 +1,1 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3" >
-    <%= form_for(@salary,url: salary_index_path ) do |f| %>
-      <%= f.label :Date_Of_Salary %>
-      <%= f.date_field :Date_Of_Salary, class: 'form-control' %>
-      <br>
-      <%= f.label :Amount %>
-      <%= f.number_field :Amount, class: 'form-control' %>
-      <br>
-      <%= f.hidden_field :emp_master_id, value: params[:id] %>
-      <br>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'new' %>

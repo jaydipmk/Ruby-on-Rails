@@ -1,11 +1,11 @@
-<h3>Employee Details</h3> 
+<h3 class="header">Employee Details</h3> 
 <% if logged_in?%>
-	<% if @emp1.role == "Admin" %>
-		<%= link_to "Add new employee", new_emp_detail_path %>
+	<%# if @emp1.role == "Admin" %>
+		<%#= link_to "Add new employee", new_emp_detail_path %>
+		<%#= render 'details' %>
+	<%# else %>
 		<%= render 'details' %>
-	<% else %>
-		<%= render 'details' %>
-	<% end %>
+	<%# end %>
 <% end %>
 
 

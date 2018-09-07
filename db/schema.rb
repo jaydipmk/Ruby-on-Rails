@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_112232) do
+ActiveRecord::Schema.define(version: 2018_09_05_052721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.string "Remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.integer "status", default: 0
   end
 
   create_table "designations", force: :cascade do |t|
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.bigint "department_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["department_id"], name: "index_designations_on_department_id"
   end
 
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.bigint "emp_master_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["emp_master_id"], name: "index_emp_addresses_on_emp_master_id"
   end
 
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.bigint "login_master_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["login_master_id"], name: "index_emp_masters_on_login_master_id"
   end
 
@@ -76,6 +79,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.datetime "updated_at", null: false
     t.bigint "login_master_id"
     t.bigint "emp_master_id"
+    t.integer "status", default: 0
     t.index ["emp_master_id"], name: "index_leaves_on_emp_master_id"
     t.index ["login_master_id"], name: "index_leaves_on_login_master_id"
   end
@@ -86,6 +90,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
   end
 
   create_table "salaries", force: :cascade do |t|
@@ -94,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_112232) do
     t.bigint "emp_master_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["emp_master_id"], name: "index_salaries_on_emp_master_id"
   end
 

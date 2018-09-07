@@ -1,0 +1,6 @@
+$(".header").hide();
+//$("#leave-modal").html("<%= escape_javascript(render 'new') %>");
+//$("#leave-modal").modal("show");
+$(".new_link").hide()
+$("#index_leave").hide().after("<%= j render ('new') %>");
+$("#new_leave").show();

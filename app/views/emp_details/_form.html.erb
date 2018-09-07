@@ -1,4 +1,6 @@
  <%= form_for(@emp,url: emp_details_path) do |f| %>
+      <h3><center>Employee General Details</center></h3>
+      <br>
       <%= f.label :FirstName %>
       <%= f.text_field :FirstName, class: 'form-control' %>
       <br>
@@ -6,25 +8,66 @@
       <%= f.text_field :LastName, class: 'form-control' %>
       <br>
       <%= f.label :Username %>
-      <%= f.text_field :Username, class: 'form-control' %>
+      <%= f.text_field :Username, value: LoginMaster.last.username,readonly: true,class: 'form-control' %>
       <br>
       <%= f.label :Email %>
       <%= f.email_field :Email, class: 'form-control' %>
       <br>
       <%= f.label :Mobile_No %>
-      <%= f.number_field :Mobile_No, class: 'form-control' %>
+      <%= f.telephone_field :Mobile_No, class: 'form-control' %>
       <br>
       <%= f.label :Nationality %>
       <%= f.text_field :Nationality, class: 'form-control' %>
       <br>
       <%= f.label :Marital_Status %>
-      <%= f.text_field :Marital_Status, class: 'form-control' %>
+      <%= f.select :Marital_Status,[:single,:Married] , class: 'form-control' %>
       <br>
       <%#= f.label :login_master_id %>
       <%= f.hidden_field :login_master_id,:value=>LoginMaster.last.id, 
                                                   class: 'form-control' %>
       <br>
-      <%= f.submit "Continue", class: "btn btn-primary" %>
+      <h3><center>Employee Address Details</center></h3>
       <br>
+      <%= f.fields_for :emp_address, @emp.build_emp_address do |ff| %>
+      <%= ff.label :Address %>
+      <%= ff.text_area :Address, size:'50*10', class: 'form-control' %>
+      <br>
+      <%= ff.label :Distict %>
+      <%= ff.text_field :Distict, class: 'form-control' %>
+      <br>
+      <%= ff.label :State %>
+      <%= ff.text_field :State, class: 'form-control' %>
+      <br>
+      <%= ff.label :Nation %>
+      <%= ff.text_field :Nation, class: 'form-control' %>
+      <br>
+      
+      <%#= ff.hidden_field :emp_master_id,class: 'form-control' %>
+
+      <% end %>
+      <br>
+      <h3><center>Employee Academic Details</center></h3>
+      <br>
+      <%= f.fields_for :emp_academic, @emp.build_emp_academic do |a| %>
+
+      <%= a.label :Degree%>
+      <%= a.text_field :Degree, class: 'form-control' %>
+      <br>
+      <%=a.label :College_or_School_Name %>
+      <%= a.text_field :College_School_Name, class: 'form-control' %>
+      <br>
+      <%=a.label :University_Name %>
+      <%= a.text_field :University_Name, class: 'form-control' %>
+      <br>
+      <%=a.label :Year_Of_Passing %>
+      <%= a.text_field :Year_Of_Passing, class: 'form-control' %>
+      <br>
+      <%=a.label :Result %>
+      <%= a.text_field :Result, class: 'form-control' %>
+      <br>
+      <%#= a.hidden_field :emp_master_id,:value=>EmpMaster.last.id, 
+                                                  class: 'form-control' %>
+      <br>
+      <% end %>
+      <%= f.submit "Sign Up", class: "btn btn-primary" %>
 <% end %>
-   

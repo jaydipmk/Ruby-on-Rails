@@ -1,0 +1,9 @@
+<h2 class="header">Welcome</h2>
+<% if @emp.role == "Admin" %>
+	<%= link_to "Add New Department", new_department_path ,id: "new_link",remote: true%>
+	<%= render 'department' %>
+<% else %>
+	<%= render 'department' %>
+<% end %>
+
+	

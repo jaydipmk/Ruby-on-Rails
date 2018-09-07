@@ -17,10 +17,11 @@
 				<td><%= e.Mobile_No%></td>
 				<% emp1 = LoginMaster.find(e.login_master_id) %>
 				<td><%= emp1.role%></td>
-				<td><%= link_to "Show", emp_detail_path(e.id)%></td>
-				<% if @emp1.role == "Admin" %>
-					<td><%= link_to "Edit",  edit_emp_detail_path(e.id) %></td>
-					<td><%= link_to "Delete", emp_detail_path(e.id), method: :delete %></td>
+				<td><%= link_to "Show", emp_detail_path(e.id), remote: true %></td>
+				<% if check_admin %>
+					<td><%= link_to "Edit",  edit_emp_detail_path(e.id), remote: true %></td>
+					<td><%= link_to "Delete", emp_detail_path(e.id), method: :delete, 
+						data: {confirm: "Are You Sure?"}, remote: true %></td>
 				<% end %>
 			<% end %>
 		</tr>

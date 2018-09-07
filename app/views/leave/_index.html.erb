@@ -1,0 +1,19 @@
+<% no = 0	 %>
+<% @leave.each do |l| %>
+<tr>	
+	<td><%= no+= 1 %></td>
+	<td><%= l.Start_Date%></td>
+	<td><%= l.End_Date%></td>
+	<td><%= l.Reason%></td>
+	<td><%= l.status%></td>
+	<% if l.status == "Deleted" %>
+		<td colspan="3"><%=link_to "Show" , leave_path(l.id),remote: true%></td>
+	<% else %>
+		<td><%=link_to "Show" , leave_path(l.id), remote: true %></td>
+		<% if check_admin %>
+		<td><%=link_to "Edit" , edit_leave_path(l.id), remote: true%></td>
+		<td><%=link_to "Delete" , leave_path(l.id), method: :delete , data: {confirm: "Are You Sure?"}, remote: true %></td>
+		<% end %>
+	<% end %>
+<% end %>
+</tr>

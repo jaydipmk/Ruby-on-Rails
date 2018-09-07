@@ -1,0 +1,9 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+	  <div class="modal-header" >
+			<h2><%= @department.Name %> Department is <%= @department.status%></h2>
+			<h3>Remark : </h3><%= @department.Remark %> | 
+			<%= link_to "back", department_index_path %>
+		</div>
+	</div>
+</div>

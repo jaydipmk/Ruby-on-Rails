@@ -1,4 +1,5 @@
 class DepartmentController < ApplicationController
+	include LoginMasterHelper
 	def index
 		@emp = LoginMaster.find(session[:user_id])
 		@department = Department.all
@@ -10,7 +11,7 @@ class DepartmentController < ApplicationController
 
 	def create
 		@department = Department.new(department_params)
-		
+		#@emp = LoginMaster.find(session[:user_id])
 		if @department.save
 			redirect_to department_index_path
 		else
@@ -26,7 +27,7 @@ class DepartmentController < ApplicationController
  	def update
  		@department = Department.find(params[:id])
  		@department.update_attributes!(department_params)
- 		redirect_to department_index_path
+	 	redirect_to department_index_path
  	end
 
 	def show
@@ -36,11 +37,17 @@ class DepartmentController < ApplicationController
 
 	def destroy
 		@department = Department.find(params[:id])
-		redirect_to department_index_path
+		@department.status = 1
+		@department.save
+
+		respond_to do |f|
+	 		f.html{redirect_to department_index_path}
+	 		f.js
+	 	end
 	end
 
 	private
 		def department_params
-			params.require(:department).permit(:Name,:Remark,:status)
+			params.require(:department).permit(:Name,:Remark)
 		end
 end

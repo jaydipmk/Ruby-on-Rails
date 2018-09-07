@@ -1,0 +1,9 @@
+<% no = 0	 %>	
+<% @emp.each do |e| %>
+ 		<tr>
+			<td><%= no+= 1 %></td>
+			<td><%= e.Username%></td>
+			<td><%= e.Email	%></td>
+			<td><%= link_to "Show", salary_path(id: e.id), remote: true %></td>
+		</tr>
+<% end %>

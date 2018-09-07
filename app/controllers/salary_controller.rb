@@ -1,7 +1,8 @@
 class SalaryController < ApplicationController
-
+	include LoginMasterHelper
 	def index 
 		#@salary = Salary.all
+		@emp1 = LoginMaster.find(session[:user_id])
 		@emp = EmpMaster.all
 	end
 

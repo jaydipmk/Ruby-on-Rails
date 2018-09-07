@@ -13,7 +13,7 @@
 #  login_master_id :bigint(8)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  emp_address_id  :bigint(8)
+#  status          :integer          default(0)
 #
 
 require 'test_helper'

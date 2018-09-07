@@ -7,9 +7,11 @@
 #  Remark     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  status     :string
+#  status     :integer
 #
 
 class Department < ApplicationRecord
+	validates :Name,:Remark,presence: true
 	has_many :designation
+	enum status: {Active: 0, InActive: 1}
 end

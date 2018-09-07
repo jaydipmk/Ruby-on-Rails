@@ -14,5 +14,8 @@
 #
 
 class EmpAcademic < ApplicationRecord
+	validates :Degree,:College_School_Name,:University_Name,presence: true,length: {maximum: 50}
+	validates :Year_Of_Passing,presence: true, numericality: true,length: {is: 4}
+	validates :Result,presence: true, numericality: true,length: {maximum: 3}
   belongs_to :emp_master
 end

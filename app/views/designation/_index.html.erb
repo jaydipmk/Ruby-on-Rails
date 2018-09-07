@@ -1,0 +1,14 @@
+<% no = 0	%>
+<% @designation.each do |d| %>
+<tr id="designation_new">
+	<td><%= no+= 1 %></td>
+	<td><%= d.post %></td>
+	<td><%= link_to "Show", designation_path(d.id), remote: true %></td>
+	<% if check_admin %>
+		<td><%= link_to "Edit",  edit_designation_path(d.id), remote: true %></td>
+		<td><%= link_to "Delete", designation_path(d.id), method: :delete, data: {confirm: "Are You Sure?"},remote: true %></td>
+	<% end %>
+<% end %>
+</tr>
+
+
