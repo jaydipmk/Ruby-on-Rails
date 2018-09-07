@@ -14,14 +14,20 @@ class DesignationController < ApplicationController
 		if @designation.save
 			redirect_to designation_index_path
 		else
-			redirect_to new_designation_path
+			#redirect_to new_designation_path
+			respond_to do |f|
+				f.js
+				@designation.errors.any?
+				@designation.errors.full_messages.each do |m|
+				end
+			end
 		end
 	end
 
 	def show
 
 		@designation = Designation.find(params[:id])
-		binding.pry
+		#binding.pry
 
 		# @department = Department.find(params[:id])
 		# #binding.pry

@@ -23,7 +23,7 @@ class EmpDetailsController < ApplicationController
     	end
     else
     	respond_to do |f|
-    		f.html{ render 'form' }
+    		f.html{ render 'new' }
     		f.js
       end
     end

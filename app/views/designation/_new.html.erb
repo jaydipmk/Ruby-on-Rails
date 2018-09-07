@@ -2,6 +2,9 @@
 <div class="row" id="designation_new">
   <div class="col-md-6 col-md-offset-3" >
     <%= form_for(@designation, url: designation_index_path, remote: true)	do |f| %>
+      
+      <span id="helpBlock" class="help-block"></span>
+      
       <%= f.label :Post %>
       <%= f.text_field :post, class: 'form-control' %>
       <br>

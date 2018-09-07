@@ -1,3 +1,11 @@
-$(".header2").show();
-$(".new_link").show();
-$("#designation_new").hide().after("<%= j render 'index' %>");
+var errors = ""
+<% if @designation.errors.any? %>
+	<% @designation.errors.full_messages.each do |m| %>
+		errors += "<div class='notice alert-danger'><%= escape_javascript(m)%></div>" 
+		<% end %>	
+		$("#helpBlock").html(errors);
+<% else %>
+	$(".header2").show();
+	$(".new_link").show();
+	$("#designation_new").hide().after("<%= j render 'index' %>");
+<% end %>

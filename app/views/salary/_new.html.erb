@@ -2,6 +2,9 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3" >
     <%= form_for(@salary,url: salary_index_path, remote: true ) do |f| %>
+
+      <span id="helpBlock" class="help-block"></span>
+
       <%= f.label :Date_Of_Salary %>
       <%= f.date_field :Date_Of_Salary, class: 'form-control' %>
       <br>

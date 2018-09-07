@@ -17,7 +17,6 @@
 #
 
 class EmpMaster < ApplicationRecord
-	  before_save { self.Email = Email.downcase }
 
 		validates :FirstName,:LastName,:Nationality,presence: true, length: {maximum: 50}
 
@@ -32,6 +31,5 @@ class EmpMaster < ApplicationRecord
 	  has_one :salary, dependent: :destroy
 	  has_one :emp_academic, dependent: :destroy
 	  accepts_nested_attributes_for :emp_address,:emp_academic, :allow_destroy=> true
-
-
+	  
 end

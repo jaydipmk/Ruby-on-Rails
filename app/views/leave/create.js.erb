@@ -1,7 +1,9 @@
+var errors = ""
 <% if @leave.errors.any? %>
 	<% @leave.errors.full_messages.each do |m| %>
-		$("#helpBlock").append("<div class='notice alert-danger'><%= escape_javascript(m)%></div>");		
-	<% end %>
+		errors += "<div class='notice alert-danger'><%= escape_javascript(m)%></div>" 
+		<% end %>	
+		$("#helpBlock").html(errors);
 <% else %>
 	$(".leave_details").html("<%= escape_javascript(render 'index') %>")
 	$("#leave-modal").modal("hide")

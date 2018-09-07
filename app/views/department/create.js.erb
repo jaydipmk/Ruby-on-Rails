@@ -1,6 +1,14 @@
-$(".header1").hide();
-$(".header").show()
-$("#new_link").show()
-$("#new_department").hide().after("<%= j render 'index'%>");
-$("#department_details_path").show();
+var errors = ""
+<% if @department.errors.any? %>
+	<% @department.errors.full_messages.each do |m| %>
+		errors += "<div class='notice alert-danger'><%= escape_javascript(m)%></div>" 
+		<% end %>	
+		$("#helpBlock").html(errors);
+<% else %>
+	$(".header1").hide();
+	$(".header").show()
+	$("#new_link").show()
+	$("#new_department").hide().after("<%= j render 'index'%>");
+	$("#department_details_path").show();
 // $("#department_details").show();
+<% end %>

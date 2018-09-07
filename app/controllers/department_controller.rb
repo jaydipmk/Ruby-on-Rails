@@ -15,7 +15,13 @@ class DepartmentController < ApplicationController
 		if @department.save
 			redirect_to department_index_path
 		else
-			redirect_to new_department_path
+			#redirect_to new_department_path
+			respond_to do |f|
+				f.js
+				@department.errors.any?
+				@department.errors.full_messages.each do |m|
+				end
+			end
 		end
 	end
 	

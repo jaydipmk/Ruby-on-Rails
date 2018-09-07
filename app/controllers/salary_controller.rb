@@ -19,7 +19,13 @@ class SalaryController < ApplicationController
 		if @salary.save
 			redirect_to salary_index_path
 		else
-			redirect_to new_salary_path
+			#redirect_to new_salary_path
+			respond_to do |f|
+				f.js
+				@salary.errors.any?
+				@salary.errors.full_messages.each do |m|
+				end
+			end
 		end
 	end
 

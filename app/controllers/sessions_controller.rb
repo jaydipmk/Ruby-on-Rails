@@ -6,13 +6,15 @@ class SessionsController < ApplicationController
 	end
 
 	def LoginCreate
-    user = LoginMaster.find_by_username_and_password_and_role(params[:session][:username],params[:session][:password],params[:session][:role])
-    if user      
+    user = LoginMaster.find_by_username_and_role(params[:session][:username],params[:session][:role])
+    if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
+      flash[:success] = "Invalid username/password combination"
       redirect_to login_master_index_path
     else
-      flash.now[:danger] = 'Invalid username/password combination'
-      redirect_to login_path
+      flash[:danger] = "Invalid username/password combination"
+      #redirect_to login_path
+      render 'new'
     end
   end
   

@@ -15,5 +15,5 @@
 
 class EmpAddress < ApplicationRecord
   belongs_to :emp_master  
-  validates :Address,:Distict,:State,:Nation,presenece: true 
+  validates :Address,:Distict,:State,:Nation,presence: true 
 end

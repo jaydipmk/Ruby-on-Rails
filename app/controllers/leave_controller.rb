@@ -19,11 +19,11 @@ class LeaveController < ApplicationController
 		if @leave.save
 			redirect_to leave_index_path		
 		else
+			#f.html{redirect_to new_leave_path}
 			respond_to do |f|
-				#f.html{redirect_to new_leave_path}
 				f.js
 				@leave.errors.any?
-				@leave.errors.each do |key, value|
+				@leave.errors.full_messages.each do |m|
 				end
 			end
 		end
